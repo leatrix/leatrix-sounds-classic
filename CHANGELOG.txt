@@ -1,4 +1,4 @@
-9.0.11.alpha.51 - 8th December 2020
+1.13.88.alpha.55 - 8th December 2020
 - Updated for game version 1.13.6.
 - Source code is now on GitHub for the time being due to CurseForge SVN migration to Overwolf.
 
