@@ -14,9 +14,9 @@
 - Fixed an issue causing sound file links printed in chat to be invalid.
 
 1.13.22 - 29th July 2020
-- Updated sound kit database to game version 1.13.5.35186.
-- Leatrix Sounds now includes both sound files and sound kits (so combining Leatrix Sounds and Leatrix Tunes into one addon). You can switch between sound files and sound kits using a new dropdown menu.
-- While a track is selected, you can now use the keyboard to control playback. Press W to play the previous track, S to play the bext track, SPACE to replay the selected track and CTRL to stop playback. This addition allows you to quickly traverse the sound listing to find the track that you want.
+- Updated sound kit database to game version 1.13.5.35186.
+- Leatrix Sounds now includes both sound files and sound kits (so combining Leatrix Sounds and Leatrix Tunes into one addon).  You can switch between sound files and sound kits using a new dropdown menu.
+- While a track is selected, you can now use the keyboard to control playback.  Press W to play the previous track, S to play the bext track, SPACE to replay the selected track and CTRL to stop playback.  This addition allows you to quickly traverse the sound listing to find the track that you want.
 - You need to restart your game client after installing this update.
 
 1.13.21 - 8th July 2020
@@ -27,7 +27,7 @@
 
 1.13.18 - 29th April 2020
 - Searches can now consist of up to 10 keywords (up from 5).
-- You can now exclude keywords from searches by prefixing them with an exclamation mark (!). Example, searching for 'gnome male !female' will show all sound kits which include 'gnome' and 'male' but do not include 'female'.
+- You can now exclude keywords from searches by prefixing them with an exclamation mark (!).  Example, searching for 'gnome male !female' will show all sound kits which include 'gnome' and 'male' but do not include 'female'.
 - The Leatrix Sounds panel is now wider.
 
 1.13.17 - 22nd April 2020
@@ -45,7 +45,7 @@
 
 1.13.07 - 11th December 2019
 - Updated for 11303.
-- Updated sound kit data for 1.13.3.32790.
+- Updated sound kit data for 1.13.3.32790.
 
 1.13.06 - 31st October 2019
 - Added a help button to the Leatrix Sounds panel.
@@ -57,4 +57,4 @@
 - Leatrix Sounds is now listed in the game options panel.
 
 1.13.04 - 8th August 2019
-- Welcome to Leatrix Sounds (Classic). This release is pretty much the same as Leatrix Sounds (Retail).
+- Welcome to Leatrix Sounds (Classic).  This release is pretty much the same as Leatrix Sounds (Retail).
