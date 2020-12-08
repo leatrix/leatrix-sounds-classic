@@ -1,0 +1,60 @@
+9.0.11.alpha.51 - 8th December 2020
+- Updated for game version 1.13.6.
+- Source code is now on GitHub for the time being due to CurseForge SVN migration to Overwolf.
+
+1.13.87 - 25th November 2020
+- Maintenance update.
+
+1.13.83 - 4th November 2020
+- The hotkey for replacing the currently selected track is now "E" (was SPACE) and the hotkey for stopping playback is now "Q" (was LCTRL).
+- When the chat editbox is activated (for instance when you shift/right-click a track), all hotkeys will be disabled until the chat editbox is deactivated.
+
+1.13.23 - 31st July 2020
+- Fixed a minor, situational issue which may have sometimes caused the listing heading to be duplicated.
+- Fixed an issue causing sound file links printed in chat to be invalid.
+
+1.13.22 - 29th July 2020
+- Updated sound kit database to game version 1.13.5.35186.
+- Leatrix Sounds now includes both sound files and sound kits (so combining Leatrix Sounds and Leatrix Tunes into one addon).  You can switch between sound files and sound kits using a new dropdown menu.
+- While a track is selected, you can now use the keyboard to control playback.  Press W to play the previous track, S to play the bext track, SPACE to replay the selected track and CTRL to stop playback.  This addition allows you to quickly traverse the sound listing to find the track that you want.
+- You need to restart your game client after installing this update.
+
+1.13.21 - 8th July 2020
+- Updated for game version 1.13.5.
+
+1.13.19 - 10th June 2020
+- Added a version check so if you accidentally install Leatrix Sounds (retail) instead of Leatrix Sounds (Classic), the addon will not run and a notice will be shown in chat.
+
+1.13.18 - 29th April 2020
+- Searches can now consist of up to 10 keywords (up from 5).
+- You can now exclude keywords from searches by prefixing them with an exclamation mark (!).  Example, searching for 'gnome male !female' will show all sound kits which include 'gnome' and 'male' but do not include 'female'.
+- The Leatrix Sounds panel is now wider.
+
+1.13.17 - 22nd April 2020
+- When inserting sound kit details into the chat editbox with RSHIFT or RCTRL, the contents of the editbox will now be cleared first. 
+
+1.13.16 - 25th March 2020
+- Updated for Wow patch 1.13.4.
+- Updated sound kit database to game version 1.13.4.33728.
+
+1.13.11 - 12th February 2020
+- Updated sound kit database to game version 1.13.3.33302.
+
+1.13.10 - 10th January 2020
+- Updated sound kit database to game version 1.13.3.32887.
+
+1.13.07 - 11th December 2019
+- Updated for 11303.
+- Updated sound kit data for 1.13.3.32790.
+
+1.13.06 - 31st October 2019
+- Added a help button to the Leatrix Sounds panel.
+- You can now CTRL/Left-click a sound kit to show a WoW.tools link for that sound kit in chat.
+- You can now CTRL/Right-click a sound kit to insert a WoW.tools link for that sound kit in the chat editbox.
+- The WoW.tools link will show all the sound files included in the sound kit along with a preview button and various other information.
+
+1.13.05 - 23rd October 2019
+- Leatrix Sounds is now listed in the game options panel.
+
+1.13.04 - 8th August 2019
+- Welcome to Leatrix Sounds (Classic).  This release is pretty much the same as Leatrix Sounds (Retail).
