@@ -1,13 +1,13 @@
-﻿
+
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound File Listing
-	-- Community CSV for wow_classic 1.13.5.35186 (ClassicRetail)
+	-- Community CSV for wow_classic 1.13.6.36935 (ClassicRetail)
 	----------------------------------------------------------------------
 
-	local void, Leatrix_Tunes = ...
-	local L = Leatrix_Tunes.L
+	local void, Leatrix_Sounds = ...
+	local L = Leatrix_Sounds.L
 
-	Leatrix_Tunes["MP3"] = {
+	Leatrix_Sounds["MP3"] = {
 
 		"interface/cinematics/logo.mp3#625988",
 		"interface/cinematics/wow_intro.mp3#625564",
@@ -214,7 +214,7 @@
 
 	}
 
-	Leatrix_Tunes["OGG"] = {
+	Leatrix_Sounds["OGG"] = {
 
 		"interface/exploration/dwarfexploration.ogg#538903",
 		"interface/exploration/gnomeexploration.ogg#538898",
@@ -3313,8 +3313,34 @@
 		"sound/creature/darkhound/mdarkhoundwoundb.ogg#546877",
 		"sound/creature/darkhound/mdarkhoundwoundc.ogg#546883",
 		"sound/creature/darkhound/mdarkhoundwoundcriticala.ogg#546882",
+		"sound/creature/deathknight/deathknightaggro.ogg#546997",
+		"sound/creature/deathknight/deathknightattacka.ogg#546992",
+		"sound/creature/deathknight/deathknightattackb.ogg#546987",
+		"sound/creature/deathknight/deathknightattackc.ogg#546996",
+		"sound/creature/deathknight/deathknightattackd.ogg#546989",
+		"sound/creature/deathknight/deathknightattacke.ogg#546994",
+		"sound/creature/deathknight/deathknightdeath.ogg#546990",
+		"sound/creature/deathknight/deathknightpreaggro.ogg#546988",
+		"sound/creature/deathknight/deathknightwounda.ogg#546998",
+		"sound/creature/deathknight/deathknightwoundb.ogg#546991",
+		"sound/creature/deathknight/deathknightwoundc.ogg#546986",
+		"sound/creature/deathknight/deathknightwoundcrit.ogg#546995",
+		"sound/creature/deathknight/deathknightwoundd.ogg#546993",
 		"sound/creature/deer/deerdeatha.ogg#547165",
 		"sound/creature/deer/deerwounda.ogg#547166",
+		"sound/creature/demonhunter/demonhunteraggro.ogg#599243",
+		"sound/creature/demonhunter/demonhunterattacka.ogg#599240",
+		"sound/creature/demonhunter/demonhunterattackb.ogg#599246",
+		"sound/creature/demonhunter/demonhunterattackc.ogg#599261",
+		"sound/creature/demonhunter/demonhunterattackd.ogg#599258",
+		"sound/creature/demonhunter/demonhunterattacke.ogg#599264",
+		"sound/creature/demonhunter/demonhunterdeath.ogg#599252",
+		"sound/creature/demonhunter/demonhunterpreaggro.ogg#599231",
+		"sound/creature/demonhunter/demonhunterwounda.ogg#599267",
+		"sound/creature/demonhunter/demonhunterwoundb.ogg#599234",
+		"sound/creature/demonhunter/demonhunterwoundc.ogg#599255",
+		"sound/creature/demonhunter/demonhunterwoundcrit.ogg#599237",
+		"sound/creature/demonhunter/demonhunterwoundd.ogg#599249",
 		"sound/creature/diablofunsized/diablofunsized1.ogg#547216",
 		"sound/creature/diablofunsized/diablofunsized2.ogg#547214",
 		"sound/creature/diablofunsized/diablofunsized3.ogg#547215",

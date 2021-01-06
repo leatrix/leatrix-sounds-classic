@@ -1,8 +1,8 @@
-﻿
+
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound Kit Listing
-	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.13.5.35186
-	-- wow.tools/dbc/api/export/?name=soundkit&build=1.13.5.35186
+	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.13.6.36935
+	-- wow.tools/dbc/api/export/?name=soundkit&build=1.13.6.36935
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...
@@ -1092,6 +1092,10 @@
 		"DeathAndDecayLoop#4854",
 		"Deathbind Sound#1141",
 		"DeathCoil Impact#743",
+		"DeathKnightAggro#177259",
+		"DeathKnightDeath#177257",
+		"DeathKnightPreAggro#177258",
+		"DeathKnightWoundCrit#177254",
 		"DeathThudColossalDirt#927",
 		"DeathThudColossalGrass#928",
 		"DeathThudColossalSnow#929",
@@ -1128,6 +1132,8 @@
 		"Demon Armor Impact#1365",
 		"DemonBreath#3220",
 		"DemonChanting#8774",
+		"DemonHunterAttack#177192",
+		"DemonHunterWound#177253",
 		"DemonicSacrafice#7594",
 		"Detect Invisibility Impact#1504",
 		"Devotion Aura#1505",
