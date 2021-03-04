@@ -1,7 +1,7 @@
 
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound File Listing
-	-- Community CSV for wow_classic 1.13.6.36935 (ClassicRetail)
+	-- Community CSV for wow_classic 1.13.6.37497 (ClassicRetail)
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...

@@ -1,8 +1,8 @@
 
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound Kit Listing
-	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.13.6.36935
-	-- wow.tools/dbc/api/export/?name=soundkit&build=1.13.6.36935
+	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.13.7.37429
+	-- wow.tools/dbc/api/export/?name=soundkit&build=1.13.7.37429
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...
