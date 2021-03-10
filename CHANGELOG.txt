@@ -1,3 +1,6 @@
+1.13.96 - 10th March 2021
+- Maintenance update.
+
 1.13.95 - 4th March 2021
 - Updated for game version 1.13.6.37497.
 
@@ -7,9 +10,6 @@
 1.13.88 - 9th December 2020
 - Updated for game version 1.13.6.
 - Source code is now on GitHub (github.com/leatrix).
-
-1.13.87 - 25th November 2020
-- Maintenance update.
 
 1.13.83 - 4th November 2020
 - The hotkey for replacing the currently selected track is now "E" (was SPACE) and the hotkey for stopping playback is now "Q" (was LCTRL).
