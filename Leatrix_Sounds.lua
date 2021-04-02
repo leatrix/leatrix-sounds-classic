@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.13.99 (1st April 2021)
+	-- Leatrix Sounds 1.13.100.alpha.1 (2nd April 2021)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,7 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB, LeaDropList = {}, {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.13.99"
+	LeaSoundsLC["AddonVer"] = "1.13.100.alpha.1"
 	LeaSoundsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -290,7 +290,7 @@
 		dbtn:SetScript("OnLeave", GameTooltip_Hide)
 
 		-- Create dropdown list
-		local ddlist =  CreateFrame("Frame", nil, frame, LeaSoundsLC.BackdropTemplate)
+		local ddlist =  CreateFrame("Frame", nil, frame)
 		LeaSoundsCB["ListFrame"..ddname] = ddlist
 		ddlist:SetPoint("TOP",0, -42)
 		ddlist:SetWidth(frame:GetWidth())
