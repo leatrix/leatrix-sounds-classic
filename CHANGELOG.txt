@@ -1,3 +1,6 @@
+1.13.102.alpha.1 - 19th April 2021
+- If dialog sound is disabled, it will now only be enabled if you play a sound kit.  Playing a sound file will not enable dialog sound if it's disabled.
+
 1.13.101 - 14th April 2021
 - Updated sound kits.
 
