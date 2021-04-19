@@ -7,6 +7,8 @@
 	local void, Leatrix_Sounds = ...
 	local L = Leatrix_Sounds.L
 
+	Leatrix_Sounds["ListFileVersion"] = "1.13.6.37497"
+
 	Leatrix_Sounds["MP3"] = {
 
 		"interface/cinematics/logo.mp3#625988",

@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.13.102.alpha.1 (19th April 2021)
+	-- Leatrix Sounds 1.13.102.alpha.2 (19th April 2021)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,7 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB, LeaDropList = {}, {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.13.102.alpha.1"
+	LeaSoundsLC["AddonVer"] = "1.13.102.alpha.2"
 	LeaSoundsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -427,7 +427,7 @@
 		end)
 
 		-- Create help button
-		local helpBtn = LeaSoundsLC:CreateButton("HelpButton", LeaSoundsLC["PageF"], "Help", "BOTTOMRIGHT", -10, 10, 25, "Searches can consist of up to 10 keywords.  Keywords prefixed with ! are excluded from search results.|n|nWhile a track is selected, you can press W and S to play the previous and next track, E to replay the currently selected track or Q to stop playback.|n|nHold SHIFT and click to print (left-click) or insert (right-click) the selected track details in chat.|n|nHold CTRL and click to print (left-click) or insert (right-click) a WoW.tools link for the selected track in chat.")
+		local helpBtn = LeaSoundsLC:CreateButton("HelpButton", LeaSoundsLC["PageF"], "Help", "BOTTOMRIGHT", -10, 10, 25, "Searches can consist of up to 10 keywords.  Keywords prefixed with ! are excluded from search results.|n|nWhile a track is selected, you can press W and S to play the previous and next track, E to replay the currently selected track or Q to stop playback.|n|nHold SHIFT and click to print (left-click) or insert (right-click) the selected track details in chat.|n|nHold CTRL and click to print (left-click) or insert (right-click) a WoW.tools link for the selected track in chat.\n\nSources:\n- ListFile " .. Leatrix_Sounds["ListFileVersion"] .. "\n" .. "- SoundKit " .. Leatrix_Sounds["SoundKitVersion"] .. "\n" .. "- SoundKitName " .. Leatrix_Sounds["SoundKitNameVersion"])
 		helpBtn:SetPushedTextOffset(0, 0)
 
 		-- Create checkboxes
