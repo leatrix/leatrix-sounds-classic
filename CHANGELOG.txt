@@ -1,15 +1,17 @@
-1.13.102.alpha.2 - 19th April 2021
-- If dialog sound is disabled, it will now only be enabled if you play a sound kit.  Playing a sound file will not enable dialog sound if it's disabled.
+1.13.102 - 21st April 2021
+- Updated for game version 1.13.7.
+- Sounds updated to game version 1.13.7.38363.
+- If dialog sound is disabled, it will now only be enabled if you play a sound kit.  Playing a sound file will no longer enable dialog sound if it's disabled.
 - The source file versions (ListFile, SoundKit, SoundKitName) are now shown in the help button tooltip.
 
 1.13.101 - 14th April 2021
 - Updated sound kits.
 
 1.13.95 - 4th March 2021
-- Updated for game version 1.13.6.37497.
+- Sounds updated to game version 1.13.6.37497.
 
 1.13.89 - 6th January 2021
-- Updated for game version 1.13.6.36935.
+- Sounds updated to game version 1.13.6.36935.
 
 1.13.88 - 9th December 2020
 - Updated for game version 1.13.6.
@@ -24,7 +26,7 @@
 - Fixed an issue causing sound file links printed in chat to be invalid.
 
 1.13.22 - 29th July 2020
-- Updated sound kit database to game version 1.13.5.35186.
+- Sounds updated to game version 1.13.5.35186.
 - Leatrix Sounds now includes both sound files and sound kits (so combining Leatrix Sounds and Leatrix Tunes into one addon).  You can switch between sound files and sound kits using a new dropdown menu.
 - While a track is selected, you can now use the keyboard to control playback.  Press W to play the previous track, S to play the bext track, SPACE to replay the selected track and CTRL to stop playback.  This addition allows you to quickly traverse the sound listing to find the track that you want.
 - You need to restart your game client after installing this update.
@@ -44,18 +46,18 @@
 - When inserting sound kit details into the chat editbox with RSHIFT or RCTRL, the contents of the editbox will now be cleared first.
 
 1.13.16 - 25th March 2020
-- Updated for Wow patch 1.13.4.
-- Updated sound kit database to game version 1.13.4.33728.
+- Updated for game version 1.13.4.
+- Sounds updated to game version 1.13.4.33728.
 
 1.13.11 - 12th February 2020
-- Updated sound kit database to game version 1.13.3.33302.
+- Sounds updated to game version 1.13.3.33302.
 
 1.13.10 - 10th January 2020
-- Updated sound kit database to game version 1.13.3.32887.
+- Sounds updated to game version 1.13.3.32887.
 
 1.13.07 - 11th December 2019
-- Updated for 11303.
-- Updated sound kit data for 1.13.3.32790.
+- Updated for game version 1.13.3.
+- Sounds updated to game version 1.13.3.32790.
 
 1.13.06 - 31st October 2019
 - Added a help button to the Leatrix Sounds panel.
