@@ -1,4 +1,5 @@
-1.13.118.alpha.3 - 4th September 2021
+1.13.119 - 16th September 2021
+- Sounds updated to game version 1.13.7.39692.
 - Updated for game version 1.14.0 (currently on PTR).
 
 1.13.116 - 5th August 2021
