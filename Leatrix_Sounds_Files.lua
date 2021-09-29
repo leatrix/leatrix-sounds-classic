@@ -1,13 +1,13 @@
 
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound File Listing
-	-- Community CSV for wow_classic_era 1.13.7.39692 (ClassicRetail)
+	-- Community CSV for wow_classic_era 1.14.0.40347 (ClassicRetail)
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...
 	local L = Leatrix_Sounds.L
 
-	Leatrix_Sounds["ListFileVersion"] = "1.13.7.39692"
+	Leatrix_Sounds["ListFileVersion"] = "1.14.0.40347"
 
 	Leatrix_Sounds["MP3"] = {
 
@@ -638,6 +638,10 @@
 		"sound/character/dwarf/dwarfvocalmale/dwarfmaleyourewelcome01.ogg#540026",
 		"sound/character/dwarf/dwarfvocalmale/dwarfmaleyourewelcome02.ogg#540038",
 		"sound/character/dwarf/dwarfvocalmale/dwarfmaleyourewelcome03.ogg#540078",
+		"sound/character/emote_whistle_01.ogg#2445845",
+		"sound/character/emote_whistle_02.ogg#2445847",
+		"sound/character/emote_whistle_03.ogg#2445848",
+		"sound/character/emote_whistle_04.ogg#2445849",
 		"sound/character/emoteboredwhistle01.ogg#539158",
 		"sound/character/emoteboredwhistle02.ogg#539157",
 		"sound/character/emoteboredwhistle03.ogg#539150",

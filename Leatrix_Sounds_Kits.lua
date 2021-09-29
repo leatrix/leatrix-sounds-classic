@@ -1,15 +1,15 @@
 
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound Kit Listing
-	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.13.7.39692
-	-- wow.tools/dbc/api/export/?name=soundkit&build=1.13.7.39692
+	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.14.0.40347
+	-- wow.tools/dbc/api/export/?name=soundkit&build=1.14.0.40347
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...
 	local L = Leatrix_Sounds.L
 
-	Leatrix_Sounds["SoundKitVersion"] = "1.13.7.39692"
-	Leatrix_Sounds["SoundKitNameVersion"] = "1.13.7.39692"
+	Leatrix_Sounds["SoundKitVersion"] = "1.14.0.40347"
+	Leatrix_Sounds["SoundKitNameVersion"] = "1.14.0.40347"
 
 	Leatrix_Sounds["Music"] = {
 
@@ -997,6 +997,11 @@
 		"ChickenDeath#1024",
 		"ChickenWound#1023",
 		"ClapSounds#6576",
+		"Classic Choice UI - Enter World - BCC#180335",
+		"Classic Choice UI - Enter World - Classic#180334",
+		"Classic Choice UI - Enter World - Classic - Murloc [NESTED]#180464",
+		"Classic Choice UI - Generic Red Button Press#180333",
+		"Classic Choice UI - Open Menu#180332",
 		"Clearcasting_Impact_Chest#4874",
 		"Cleave#1489",
 		"CleaveTarget#3112",
@@ -3965,71 +3970,56 @@
 		"temp miss 2h#7079",
 		"TEST DOODAD SOUND#754",
 		"TextEmote DwF Bored#7947",
-		"TextEmote DwF Catcall#7963",
 		"TextEmote DwF Sigh#7917",
 		"TextEmote DwF Yawn#7935",
 		"TextEmote DwM Bored#7948",
-		"TextEmote DwM Catcall#7964",
 		"TextEmote DwM Sigh#7918",
 		"TextEmote DwM Yawn#7936",
 		"TextEmote GnF Bored#7949",
-		"TextEmote GnF Catcall#7965",
 		"TextEmote GnF Sigh#7919",
 		"TextEmote GnF Yawn#7937",
 		"TextEmote GnM Bored#7950",
-		"TextEmote GnM Catcall#7966",
 		"TextEmote GnM Sigh#7920",
 		"TextEmote GnM Yawn#7938",
 		"TextEmote HuF Bored#7951",
-		"TextEmote HuF Catcall#7967",
 		"TextEmote HuF Sigh#7894",
 		"TextEmote HuF Yawn#7931",
 		"TextEmote HuM Bored#7952",
-		"TextEmote HuM Catcall#7968",
 		"TextEmote HuM Sigh#7914",
 		"TextEmote HuM Yawn#7932",
 		"TextEmote NiF Bored#7953",
-		"TextEmote NiF Catcall#7969",
 		"TextEmote NiF Sigh#7915",
 		"TextEmote NiF Yawn#7933",
 		"TextEmote NiM Bored#7954",
-		"TextEmote NiM Catcall#7970",
 		"TextEmote NiM Sigh#7916",
 		"TextEmote NiM Yawn#7934",
 		"TextEmote OrF Bored#7955",
-		"TextEmote OrF Catcall#7971",
 		"TextEmote OrF Sigh#7921",
 		"TextEmote OrF Yawn#7939",
 		"TextEmote OrM Bored#7956",
-		"TextEmote OrM Catcall#7972",
 		"TextEmote OrM Sigh#7922",
 		"TextEmote OrM Yawn#7940",
 		"TextEmote TaF Bored#7957",
-		"TextEmote TaF Catcall#7973",
 		"TextEmote TaF Moo#7929",
 		"TextEmote TaF Sigh#7925",
 		"TextEmote TaF Yawn#7945",
 		"TextEmote TaM Bored#7958",
-		"TextEmote TaM Catcall#7974",
 		"TextEmote TaM Moo#7930",
 		"TextEmote TaM Sigh#7926",
 		"TextEmote TaM Yawn#7946",
 		"TextEmote TrF Bored#7959",
-		"TextEmote TrF Catcall#7975",
 		"TextEmote TrF Sigh#7923",
 		"TextEmote TrF Yawn#7943",
 		"TextEmote TrM Bored#7960",
-		"TextEmote TrM Catcall#7976",
 		"TextEmote TrM Sigh#7924",
 		"TextEmote TrM Yawn#7944",
 		"TextEmote UnF Bored#7962",
-		"TextEmote UnF Catcall#7977",
 		"TextEmote UnF Sigh#7927",
 		"TextEmote UnF Yawn#7941",
 		"TextEmote UnM Bored#7961",
-		"TextEmote UnM Catcall#7978",
 		"TextEmote UnM Sigh#7928",
 		"TextEmote UnM Yawn#7942",
+		"TextEmote Whistle#7968",
 		"Thorns#3225",
 		"ThrallGreetings#7214",
 		"ThreshadonAggro#1236",

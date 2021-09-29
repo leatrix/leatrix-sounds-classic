@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.13.119 (16th September 2021)
+	-- Leatrix Sounds 1.14.00 (29th September 2021)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,8 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB, LeaDropList = {}, {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.13.119"
-	LeaSoundsLC["RestartReq"] = nil
+	LeaSoundsLC["AddonVer"] = "1.14.00"
 
 	-- Get locale table
 	local void, Leatrix_Sounds = ...
@@ -24,20 +23,6 @@
 			-- Game client is not Wow Classic
 			C_Timer.After(2, function()
 				print(L["LEATRIX SOUNDS: WRONG VERSION INSTALLED!"])
-			end)
-			return
-		end
-		if gametocversion and gametocversion >= 11400 then
-			LeaSoundsLC.BackdropTemplate = "BackdropTemplate"
-		end
-	end
-
-	-- If client restart is required and has not been done, show warning and quit
-	if LeaSoundsLC["RestartReq"] then
-		local metaVer = GetAddOnMetadata("Leatrix_Sounds", "Version")
-		if metaVer and metaVer ~= LeaSoundsLC["AddonVer"] then
-			C_Timer.After(1, function()
-				print(L["NOTICE!|nYou must fully restart your game client before you can use this version of Leatrix Sounds."])
 			end)
 			return
 		end
@@ -148,7 +133,7 @@
 		eb:SetScript("OnEnterPressed", eb.ClearFocus)
 
 		-- Add editbox border and backdrop
-		eb.f = CreateFrame("FRAME", nil, eb, LeaSoundsLC.BackdropTemplate)
+		eb.f = CreateFrame("FRAME", nil, eb, "BackdropTemplate")
 		eb.f:SetBackdrop({bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = false, tileSize = 16, edgeSize = 16, insets = { left = 5, right = 5, top = 5, bottom = 5 }})
 		eb.f:SetPoint("LEFT", -6, 0)
 		eb.f:SetWidth(eb:GetWidth()+6)
@@ -293,7 +278,7 @@
 		dbtn:SetScript("OnLeave", GameTooltip_Hide)
 
 		-- Create dropdown list
-		local ddlist =  CreateFrame("Frame", nil, frame, LeaSoundsLC.BackdropTemplate)
+		local ddlist =  CreateFrame("Frame", nil, frame, "BackdropTemplate")
 		LeaSoundsCB["ListFrame"..ddname] = ddlist
 		ddlist:SetPoint("TOP",0, -42)
 		ddlist:SetWidth(frame:GetWidth())
