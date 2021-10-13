@@ -1,5 +1,5 @@
-1.14.01.alpha.1 - 8th October 2021
-- Maintenance update.
+1.14.01 - 13th October 2021
+- Sounds updated to game version 1.14.0.40441.
 
 1.14.00 - 29th September 2021
 - Updated for patch 1.14.
