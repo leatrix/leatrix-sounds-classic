@@ -1,9 +1,9 @@
-﻿## Interface: 11400
+## Interface: 11400
 
 ## Title: Leatrix Sounds
 ## Notes: Massive collection of game sound kits.
 
-## Version: 1.14.03
+## Version: 1.14.04.alpha.1
 ## Author: Leatrix
 ## SavedVariables: LeaSoundsDB
 
