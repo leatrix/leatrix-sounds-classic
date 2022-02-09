@@ -1,15 +1,15 @@
 
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound Kit Listing
-	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.14.1.41794
-	-- wow.tools/dbc/api/export/?name=soundkit&build=1.14.1.41794
+	-- wow.tools/dbc/api/export/?name=soundkitname&build=1.14.2.42214
+	-- wow.tools/dbc/api/export/?name=soundkit&build=1.14.2.42214
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...
 	local L = Leatrix_Sounds.L
 
-	Leatrix_Sounds["SoundKitVersion"] = "1.14.1.41794"
-	Leatrix_Sounds["SoundKitNameVersion"] = "1.14.1.41794"
+	Leatrix_Sounds["SoundKitVersion"] = "1.14.2.42214"
+	Leatrix_Sounds["SoundKitNameVersion"] = "1.14.2.42214"
 
 	Leatrix_Sounds["Music"] = {
 
@@ -2770,6 +2770,16 @@
 		"MobatWoundCrit#8448",
 		"Molten Blast Impact#1507",
 		"MoltovCocktailImpact#8392",
+		"MON_Incubus_Aggro#191929",
+		"MON_Incubus_Attack#191925",
+		"MON_Incubus_Death#191928",
+		"MON_Incubus_Entice Whip#191955",
+		"MON_Incubus_Pet_Summon#191933",
+		"MON_Incubus_PetAttack#191930",
+		"MON_Incubus_PetDismiss#191932",
+		"MON_Incubus_PetOrder#191931",
+		"MON_Incubus_Wound#191926",
+		"MON_Incubus_WoundCrit#191927",
 		"MONEYFRAMECLOSE#892",
 		"MONEYFRAMEOPEN#891",
 		"MonsterLure01Death#2303",
@@ -3635,6 +3645,7 @@
 		"Special Ability Impact Sound#49",
 		"Special Physical Ability Cast#48",
 		"Special Weapon Impact#50",
+		"Spell 2.5.3 Incubus Pet Cast - Shadow Cast#191957",
 		"SPELLBOOKCHANGEPAGE#605",
 		"SPELLBOOKCLOSE#604",
 		"SPELLBOOKOPEN#603",
