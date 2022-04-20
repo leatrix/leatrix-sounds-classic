@@ -1,13 +1,13 @@
 
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound File Listing
-	-- 1.14.2.42597
+	-- 1.14.3.43154
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...
 	local L = Leatrix_Sounds.L
 
-	Leatrix_Sounds["ListFileVersion"] = "1.14.2.42597"
+	Leatrix_Sounds["ListFileVersion"] = "1.14.3.43154"
 
 	Leatrix_Sounds["MP3"] = {
 
@@ -6710,6 +6710,7 @@
 		"sound/interface/ui_voicechat_muteotheron.ogg#2113872",
 		"sound/interface/ui_voicechat_stoptalk.ogg#2113883",
 		"sound/interface/ui_voicechat_talkstart.ogg#2113882",
+		"sound/interface/ui_voicechat_ttsmessage.ogg#4192839",
 		"sound/interface/uilootpickupitem.ogg#567517",
 		"sound/interface/uminimapclose.ogg#567515",
 		"sound/interface/uminimapopen.ogg#567529",
