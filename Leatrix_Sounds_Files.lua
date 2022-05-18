@@ -1,13 +1,12 @@
 
 	----------------------------------------------------------------------
 	-- Leatrix Sounds Sound File Listing
-	-- 1.14.3.43401
 	----------------------------------------------------------------------
 
 	local void, Leatrix_Sounds = ...
 	local L = Leatrix_Sounds.L
 
-	Leatrix_Sounds["ListFileVersion"] = "1.14.3.43401"
+	Leatrix_Sounds["ListFileVersion"] = "1.14.3.43639"
 
 	Leatrix_Sounds["MP3"] = {
 
