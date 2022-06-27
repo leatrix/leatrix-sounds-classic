@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.14.47 (22nd June 2022)
+	-- Leatrix Sounds 1.14.48.alpha.1 (27th June 2022)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,7 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB, LeaDropList = {}, {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.14.47"
+	LeaSoundsLC["AddonVer"] = "1.14.48.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Sounds = ...
@@ -130,8 +130,8 @@
 		eb:SetHeight(24)
 		eb:SetFontObject("GameFontNormal")
 		eb:SetTextColor(1.0, 1.0, 1.0)
-		eb:SetAutoFocus(false) 
-		eb:SetMaxLetters(maxchars) 
+		eb:SetAutoFocus(false)
+		eb:SetMaxLetters(maxchars)
 		eb:SetScript("OnEscapePressed", eb.ClearFocus)
 		eb:SetScript("OnEnterPressed", eb.ClearFocus)
 
@@ -259,13 +259,13 @@
 		local dd = CreateFrame("Frame", nil, frame); dd:SetPoint("BOTTOMLEFT", -16, -8); dd:SetPoint("BOTTOMRIGHT", 15, -4); dd:SetHeight(32);
 
 		-- Create dropdown textures
-		local lt = dd:CreateTexture(nil, "ARTWORK"); lt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); lt:SetTexCoord(0, 0.1953125, 0, 1); lt:SetPoint("TOPLEFT", dd, 0, 17); lt:SetWidth(25); lt:SetHeight(64); 
-		local rt = dd:CreateTexture(nil, "BORDER"); rt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); rt:SetTexCoord(0.8046875, 1, 0, 1); rt:SetPoint("TOPRIGHT", dd, 0, 17); rt:SetWidth(25); rt:SetHeight(64); 
+		local lt = dd:CreateTexture(nil, "ARTWORK"); lt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); lt:SetTexCoord(0, 0.1953125, 0, 1); lt:SetPoint("TOPLEFT", dd, 0, 17); lt:SetWidth(25); lt:SetHeight(64);
+		local rt = dd:CreateTexture(nil, "BORDER"); rt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); rt:SetTexCoord(0.8046875, 1, 0, 1); rt:SetPoint("TOPRIGHT", dd, 0, 17); rt:SetWidth(25); rt:SetHeight(64);
 		local mt = dd:CreateTexture(nil, "BORDER"); mt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); mt:SetTexCoord(0.1953125, 0.8046875, 0, 1); mt:SetPoint("LEFT", lt, "RIGHT"); mt:SetPoint("RIGHT", rt, "LEFT"); mt:SetHeight(64);
 
 		-- Create dropdown label
 		local lf = dd:CreateFontString(nil, "OVERLAY", "GameFontNormal"); lf:SetPoint("TOPLEFT", frame, 0, 0); lf:SetPoint("TOPRIGHT", frame, -5, 0); lf:SetJustifyH("LEFT"); lf:SetText(L[label])
-	
+
 		-- Create dropdown placeholder for value (set it using OnShow)
 		local value = dd:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 		LeaSoundsLC[ddname.."Value"] = value
@@ -307,7 +307,7 @@
 			dditem:SetHeight(20)
 			dditem:SetPoint("TOPLEFT", 12, -k*16)
 
-			dditem.f = dditem:CreateFontString(nil, 'ARTWORK', 'GameFontHighlight'); 
+			dditem.f = dditem:CreateFontString(nil, 'ARTWORK', 'GameFontHighlight');
 			dditem.f:SetPoint('LEFT', 16, 0)
 			dditem.f:SetText(items[k])
 
@@ -327,7 +327,7 @@
 			-- Show list when button is clicked
 			dbtn:SetScript("OnClick", function()
 				-- Show the dropdown
-				if ddlist:IsShown() then ddlist:Hide() else 
+				if ddlist:IsShown() then ddlist:Hide() else
 					ddlist:Show();
 					ddlistchk:SetPoint("TOPLEFT",10,select(5,LeaSoundsCB["Drop"..ddname..LeaSoundsLC[ddname]]:GetPoint()))
 					ddlistchk:Show();
@@ -346,7 +346,7 @@
 		end
 
 		return frame
-		
+
 	end
 
 	----------------------------------------------------------------------
@@ -407,7 +407,7 @@
 		PageF.footTex:SetVertexColor(0.5, 0.5, 0.5, 1.0)
 
 		-- Add close Button
-		PageF.cb = CreateFrame("Button", nil, PageF, "UIPanelCloseButton") 
+		PageF.cb = CreateFrame("Button", nil, PageF, "UIPanelCloseButton")
 		PageF.cb:SetSize(30, 30)
 		PageF.cb:SetPoint("TOPRIGHT", 0, 0)
 
@@ -442,7 +442,7 @@
 		-- Show list items
 		local function UpdateList()
 			-- Add headers to ListData if needed
-			if not strfind(ListData[1], "|c") then 
+			if not strfind(ListData[1], "|c") then
 				tinsert(ListData, 1, "|cffffd800" .. L["Leatrix Sounds"] .. " " .. LeaSoundsLC["AddonVer"])
 				tinsert(ListData, 2, "|cffffffaa{" .. #Leatrix_Sounds["Listing"] - 1 .. " " .. L["results"] .. "}")
 				tinsert(ListData, 3, "|cffffffff")
@@ -902,7 +902,7 @@
 		end)
 
 		PageF:EnableKeyboard(true)
-		PageF:SetScript("OnKeyUp", function(self, key) 
+		PageF:SetScript("OnKeyUp", function(self, key)
 
 			-- Do nothing if CTRL, SHIFT or ALT is down
 			if IsModifierKeyDown() then return end
@@ -1028,7 +1028,7 @@
 				return
 			elseif str == "rsnd" then
 				-- Restart the sound system
-				if LeaSoundsCB["StopPlaybackButton"] then LeaSoundsCB["StopPlaybackButton"]:Click() end 
+				if LeaSoundsCB["StopPlaybackButton"] then LeaSoundsCB["StopPlaybackButton"]:Click() end
 				Sound_GameSystem_RestartSoundSystem()
 				LeaSoundsLC:Print("Sound system restarted.")
 				return
@@ -1064,7 +1064,7 @@
 
 	-- Add slash commands
 	_G.SLASH_Leatrix_Sounds1 = "/lts"
-	_G.SLASH_Leatrix_Sounds2 = "/leasounds" 
+	_G.SLASH_Leatrix_Sounds2 = "/leasounds"
 	SlashCmdList["Leatrix_Sounds"] = function(self)
 		-- Run slash command function
 		SlashFunc(self)
