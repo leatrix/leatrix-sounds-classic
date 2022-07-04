@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.14.48.alpha.1 (27th June 2022)
+	-- Leatrix Sounds 1.14.48.alpha.1 (4th July 2022)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -901,6 +901,7 @@
 			PageF:EnableKeyboard(true)
 		end)
 
+		local jumpList = 15 -- Number of tracks for next and previous page
 		PageF:EnableKeyboard(true)
 		PageF:SetScript("OnKeyUp", function(self, key)
 
@@ -943,8 +944,8 @@
 
 					-- Scroll forwards if last visible track is selected with more tracks available
 					if playingTrack == 15 and #ListData > numButtons then
-						LeaSoundsScrollFrameScrollBarScrollDownButton:Click()
-						playingTrack = playingTrack - 6
+						LeaSoundsScrollFrameScrollBar:SetValue(LeaSoundsScrollFrameScrollBar:GetValue() + jumpList * 16) -- 16 is row height
+						playingTrack = playingTrack - jumpList
 					end
 
 					-- Play next sound kit
@@ -954,8 +955,8 @@
 				if key == "W" then
 					-- Play previous sound kit
 					if playingTrack == 1 then
-						LeaSoundsScrollFrameScrollBarScrollUpButton:Click()
-						playingTrack = playingTrack + 6
+						LeaSoundsScrollFrameScrollBar:SetValue(LeaSoundsScrollFrameScrollBar:GetValue() - jumpList * 16) -- 16 is row height
+						playingTrack = playingTrack + jumpList
 					end
 					scrollFrame.buttons[playingTrack - 1]:Click("LeftButton")
 				end
