@@ -6,7 +6,7 @@
 	local void, Leatrix_Sounds = ...
 	local L = Leatrix_Sounds.L
 
-	Leatrix_Sounds["ListFileVersion"] = "1.14.3.44170"
+	Leatrix_Sounds["ListFileVersion"] = "1.14.3.44403"
 
 	Leatrix_Sounds["MP3"] = {
 
