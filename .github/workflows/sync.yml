@@ -1,0 +1,15 @@
+# .github/workflows/git-sync.yml
+
+on: push
+jobs:
+  git-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-sync
+        uses: wei/git-sync@v3
+        with:
+          source_repo: "source_org/repository"
+          source_branch: "main"
+          destination_repo: "destination_org/repository"
+          destination_branch: "main"
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # optional
