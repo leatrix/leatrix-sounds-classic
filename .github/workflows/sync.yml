@@ -10,5 +10,5 @@ jobs:
         with:
           source_repo: "https://leatrix@github.com/leatrix/leatrix-sounds-classic.git"
           source_branch: "main"
-          destination_repo: "https://leatrix@gitlab.com/leatrix/leatrix-sounds-classic"
+          destination_repo: "https://gitlab.com/leatrix/leatrix-sounds-classic.git"
           destination_branch: "main"
