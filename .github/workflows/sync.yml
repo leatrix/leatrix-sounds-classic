@@ -12,3 +12,4 @@ jobs:
           source_branch: "main"
           destination_repo: "https://gitlab.com/leatrix/leatrix-sounds-classic.git"
           destination_branch: "main"
+          token: ${{ secrets.GIBLAB_KEY }}
