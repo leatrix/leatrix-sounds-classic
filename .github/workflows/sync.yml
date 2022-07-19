@@ -8,7 +8,7 @@ jobs:
       - name: git-sync
         uses: wei/git-sync@v3
         with:
-          source_repo: "https://leatrix:personal_access_token@github.com/leatrix/leatrix-sounds-classic.git"
+          source_repo: "https://leatrix@github.com/leatrix/leatrix-sounds-classic.git"
           source_branch: "main"
           destination_repo: "https://gitlab.com/leatrix/leatrix-sounds-classic"
           destination_branch: "main"
