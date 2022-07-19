@@ -1,15 +1,22 @@
-# .github/workflows/git-sync.yml
+name: GitlabSync
 
-on: push
+on:
+  - push
+  - delete
+
 jobs:
-  git-sync:
+  sync:
     runs-on: ubuntu-latest
+    name: Git Repo Sync
     steps:
-      - name: git-sync
-        uses: wei/git-sync@v3
-        with:
-          source_repo: "https://leatrix@github.com/leatrix/leatrix-sounds-classic.git"
-          source_branch: "main"
-          destination_repo: "https://gitlab.com/leatrix/leatrix-sounds-classic.git"
-          destination_branch: "main"
-          token: ${{ secrets.GIBLAB_KEY }}
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: wangchucheng/git-repo-sync@v0.1.0
+      with:
+        # Such as https://github.com/wangchucheng/git-repo-sync.git
+        target-url: ${{ secrets.TARGET_URL }}
+        # Such as wangchucheng
+        target-username: ${{ secrets.TARGET_USERNAME }}
+          # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS\_TOKEN }}
+        target-token: ${{ secrets.TARGET_TOKEN }}
