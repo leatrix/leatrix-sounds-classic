@@ -8,8 +8,7 @@ jobs:
       - name: git-sync
         uses: wei/git-sync@v3
         with:
-          source_repo: "source_org/repository"
+          source_repo: "https://leatrix:personal_access_token@github.com/leatrix/leatrix-sounds-classic.git"
           source_branch: "main"
-          destination_repo: "destination_org/repository"
+          destination_repo: "https://gitlab.com/leatrix/leatrix-sounds-classic"
           destination_branch: "main"
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # optional
