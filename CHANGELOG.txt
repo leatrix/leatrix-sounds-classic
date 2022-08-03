@@ -1,5 +1,5 @@
-1.14.49.alpha.1 - 19th July 2022
-- Hottest day of the year!
+1.14.49 - 3rd August 2022
+- Sounds updated to game version 1.14.3.44834.
 
 1.14.48 - 6th July 2022
 - Pressing W and S to traverse the listing will now show more tracks per page.
