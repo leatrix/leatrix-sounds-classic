@@ -1,16 +1,16 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.14.56 (17th August 2022)
+	-- Leatrix Sounds 1.14.57.alpha.1 (21st August 2022)
 	----------------------------------------------------------------------
 
 	--  Create global table
 	_G.LeaSoundsDB = _G.LeaSoundsDB or {}
 
 	-- Create local tables
-	local LeaSoundsLC, LeaSoundsCB, LeaDropList = {}, {}, {}
+	local LeaSoundsLC, LeaSoundsCB = {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.14.56"
+	LeaSoundsLC["AddonVer"] = "1.14.57.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Sounds = ...
@@ -85,22 +85,6 @@
 		local gscale = UIParent:GetEffectiveScale()
 		local tscale = GameTooltip:GetEffectiveScale()
 		local gap = ((UIParent:GetRight() * gscale) - (parent:GetRight() * pscale))
-		if gap < (250 * tscale) then
-			GameTooltip:SetPoint("TOPRIGHT", parent, "TOPLEFT", 0, 0)
-		else
-			GameTooltip:SetPoint("TOPLEFT", parent, "TOPRIGHT", 0, 0)
-		end
-		GameTooltip:SetText(self.tiptext, nil, nil, nil, nil, true)
-	end
-
-	-- Show tooltips for configuration buttons and dropdown menus
-	function LeaSoundsLC:ShowTooltip()
-		GameTooltip:SetOwner(self, "ANCHOR_NONE")
-		local parent = LeaSoundsLC["PageF"]
-		local pscale = parent:GetEffectiveScale()
-		local gscale = UIParent:GetEffectiveScale()
-		local tscale = GameTooltip:GetEffectiveScale()
-		local gap = ((UIParent:GetRight() * gscale) - (LeaSoundsLC["PageF"]:GetRight() * pscale))
 		if gap < (250 * tscale) then
 			GameTooltip:SetPoint("TOPRIGHT", parent, "TOPLEFT", 0, 0)
 		else
@@ -243,116 +227,6 @@
 		end)
 	end
 
-	-- Create a dropdown menu (using custom function to avoid taint)
-	function LeaSoundsLC:CreateDropDown(ddname, label, parent, width, anchor, x, y, items, tip)
-
-		-- Add the dropdown name to a table
-		tinsert(LeaDropList, ddname)
-
-		-- Populate variable with item list
-		LeaSoundsLC[ddname.."Table"] = items
-
-		-- Create outer frame
-		local frame = CreateFrame("FRAME", nil, parent); frame:SetWidth(width); frame:SetHeight(42); frame:SetPoint("BOTTOMLEFT", parent, anchor, x, y);
-
-		-- Create dropdown inside outer frame
-		local dd = CreateFrame("Frame", nil, frame); dd:SetPoint("BOTTOMLEFT", -16, -8); dd:SetPoint("BOTTOMRIGHT", 15, -4); dd:SetHeight(32);
-
-		-- Create dropdown textures
-		local lt = dd:CreateTexture(nil, "ARTWORK"); lt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); lt:SetTexCoord(0, 0.1953125, 0, 1); lt:SetPoint("TOPLEFT", dd, 0, 17); lt:SetWidth(25); lt:SetHeight(64);
-		local rt = dd:CreateTexture(nil, "BORDER"); rt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); rt:SetTexCoord(0.8046875, 1, 0, 1); rt:SetPoint("TOPRIGHT", dd, 0, 17); rt:SetWidth(25); rt:SetHeight(64);
-		local mt = dd:CreateTexture(nil, "BORDER"); mt:SetTexture("Interface\\Glues\\CharacterCreate\\CharacterCreate-LabelFrame"); mt:SetTexCoord(0.1953125, 0.8046875, 0, 1); mt:SetPoint("LEFT", lt, "RIGHT"); mt:SetPoint("RIGHT", rt, "LEFT"); mt:SetHeight(64);
-
-		-- Create dropdown label
-		local lf = dd:CreateFontString(nil, "OVERLAY", "GameFontNormal"); lf:SetPoint("TOPLEFT", frame, 0, 0); lf:SetPoint("TOPRIGHT", frame, -5, 0); lf:SetJustifyH("LEFT"); lf:SetText(L[label])
-
-		-- Create dropdown placeholder for value (set it using OnShow)
-		local value = dd:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
-		LeaSoundsLC[ddname.."Value"] = value
-		value:SetPoint("LEFT", lt, 26, 2); value:SetPoint("RIGHT", rt, -43, 0); value:SetJustifyH("LEFT"); value:SetWordWrap(false)
-		dd:SetScript("OnShow", function() value:SetText(LeaSoundsLC[ddname.."Table"][LeaSoundsLC[ddname]]) end)
-
-		-- Create dropdown button (clicking it opens the dropdown list)
-		local dbtn = CreateFrame("Button", nil, dd)
-		LeaSoundsCB["ListButton"..ddname] = dbtn
-		dbtn:SetPoint("TOPRIGHT", rt, -16, -18); dbtn:SetWidth(24); dbtn:SetHeight(24)
-		dbtn:SetNormalTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Up"); dbtn:SetPushedTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Down"); dbtn:SetDisabledTexture("Interface\\ChatFrame\\UI-ChatIcon-ScrollDown-Disabled"); dbtn:SetHighlightTexture("Interface\\Buttons\\UI-Common-MouseHilight"); dbtn:GetHighlightTexture():SetBlendMode("ADD")
-		dbtn.tiptext = tip; dbtn:SetScript("OnEnter", LeaSoundsLC.ShowTooltip)
-		dbtn:SetScript("OnLeave", GameTooltip_Hide)
-
-		-- Create dropdown list
-		local ddlist =  CreateFrame("Frame", nil, frame, "BackdropTemplate")
-		LeaSoundsCB["ListFrame"..ddname] = ddlist
-		ddlist:SetPoint("TOP",0, -42)
-		ddlist:SetWidth(frame:GetWidth())
-		ddlist:SetHeight((#items * 17) + 17 + 17)
-		ddlist:SetBackdrop({bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background-Dark", edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border", tile = false, tileSize = 0, edgeSize = 32, insets = { left = 4, right = 4, top = 4, bottom = 4}})
-		ddlist:Hide()
-
-		-- Hide list if parent is closed
-		parent:HookScript("OnHide", function() ddlist:Hide() end)
-
-		-- Create checkmark (it marks the currently selected item)
-		local ddlistchk = CreateFrame("FRAME", nil, ddlist)
-		ddlistchk:SetHeight(16); ddlistchk:SetWidth(16);
-		ddlistchk.t = ddlistchk:CreateTexture(nil, "ARTWORK"); ddlistchk.t:SetAllPoints(); ddlistchk.t:SetTexture("Interface\\Common\\UI-DropDownRadioChecks"); ddlistchk.t:SetTexCoord(0, 0.5, 0.5, 1.0);
-
-		-- Create dropdown list items
-		for k, v in pairs(items) do
-
-			local dditem = CreateFrame("Button", nil, LeaSoundsCB["ListFrame"..ddname])
-			LeaSoundsCB["Drop"..ddname..k] = dditem;
-			dditem:Show();
-			dditem:SetWidth(ddlist:GetWidth()-22)
-			dditem:SetHeight(20)
-			dditem:SetPoint("TOPLEFT", 12, -k*16)
-
-			dditem.f = dditem:CreateFontString(nil, 'ARTWORK', 'GameFontHighlight');
-			dditem.f:SetPoint('LEFT', 16, 0)
-			dditem.f:SetText(items[k])
-
-			dditem.f:SetWordWrap(false)
-			dditem.f:SetJustifyH("LEFT")
-			dditem.f:SetWidth(ddlist:GetWidth()-36)
-
-			dditem.t = dditem:CreateTexture(nil, "BACKGROUND")
-			dditem.t:SetAllPoints()
-			dditem.t:SetColorTexture(0.3, 0.3, 0.00, 0.8)
-			dditem.t:Hide();
-
-			dditem:SetScript("OnEnter", function() dditem.t:Show() end)
-			dditem:SetScript("OnLeave", function() dditem.t:Hide() end)
-			dditem:SetScript("OnClick", function()
-				LeaSoundsLC[ddname] = k
-				value:SetText(LeaSoundsLC[ddname.."Table"][k])
-				ddlist:Hide(); -- Must be last in click handler as other functions hook it
-			end)
-
-			-- Show list when button is clicked
-			dbtn:SetScript("OnClick", function()
-				-- Show the dropdown
-				if ddlist:IsShown() then ddlist:Hide() else
-					ddlist:Show();
-					ddlistchk:SetPoint("TOPLEFT",10,select(5,LeaSoundsCB["Drop"..ddname..LeaSoundsLC[ddname]]:GetPoint()))
-					ddlistchk:Show();
-				end;
-				-- Hide all other dropdowns except the one we're dealing with
-				for void,v in pairs(LeaDropList) do
-					if v ~= ddname then
-						LeaSoundsCB["ListFrame"..v]:Hide();
-					end
-				end
-			end)
-
-			-- Expand the clickable area of the button to include the entire menu width
-			dbtn:SetHitRectInsets(-width+28, 0, 0, 0);
-
-		end
-
-		return frame
-
-	end
-
 	----------------------------------------------------------------------
 	-- L20: Player
 	----------------------------------------------------------------------
@@ -422,7 +296,7 @@
 		end)
 
 		-- Create help button
-		local helpBtn = LeaSoundsLC:CreateButton("HelpButton", LeaSoundsLC["PageF"], "Help", "BOTTOMRIGHT", -10, 10, 25, "Searches can consist of up to 10 keywords.  Keywords prefixed with ! are excluded from search results.|n|nWhile a track is selected, you can press W and S to play the previous and next track, E to replay the currently selected track or Q to stop playback.|n|nHold SHIFT and click to print (left-click) or insert (right-click) the selected track details in chat.|n|nHold CTRL and click to print (left-click) or insert (right-click) a WoW.tools link for the selected track in chat.\n\nSources:\n- ListFile " .. Leatrix_Sounds["ListFileVersion"] .. "\n" .. "- SoundKit " .. Leatrix_Sounds["SoundKitVersion"] .. "\n" .. "- SoundKitName " .. Leatrix_Sounds["SoundKitNameVersion"])
+		local helpBtn = LeaSoundsLC:CreateButton("HelpButton", LeaSoundsLC["PageF"], "Help", "BOTTOMRIGHT", -10, 10, 25, "Searches can consist of up to 10 keywords.  Keywords prefixed with ! are excluded from search results.|n|nWhile a track is selected, you can press W and S to play the previous and next track, E to replay the currently selected track or Q to stop playback.|n|nHold SHIFT and click to print (left-click) or insert (right-click) the selected track details in chat.")
 		helpBtn:SetPushedTextOffset(0, 0)
 
 		-- Create checkboxes
@@ -434,9 +308,6 @@
 		LeaSoundsCB["SoundSFX"]:SetPoint("RIGHT", LeaSoundsCB["HelpButton"], "LEFT", -50, 0)
 		LeaSoundsCB["SoundMusic"]:ClearAllPoints()
 		LeaSoundsCB["SoundMusic"]:SetPoint("RIGHT", LeaSoundsCB["SoundSFX"], "LEFT", -50, 0)
-
-		-- Create dropdown menu for sound source
-		LeaSoundsLC:CreateDropDown("SoundSource", "", PageF, 146, "TOPLEFT", 426, -296, {L["Sound Files"], L["Sound Kits"]}, "You can choose to show sound files or sound kits in the listing.|n|nSound files are MP3 and OGG files.  Sound kits are containers for one or more sound files.|n|nIf you are looking for a file name and path to mute a game sound, choose Sound Files.|n|nYou can right-click the dropdown menu to toggle between Sound Files and Sound Kits.")
 
 		-- Create locals
 		local ListData, searchTable = {}, {}
@@ -450,11 +321,7 @@
 				tinsert(ListData, 1, "|cffffd800" .. L["Leatrix Sounds"] .. " " .. LeaSoundsLC["AddonVer"])
 				tinsert(ListData, 2, "|cffffffaa{" .. #Leatrix_Sounds["Listing"] - 1 .. " " .. L["results"] .. "}")
 				tinsert(ListData, 3, "|cffffffff")
-				if LeaSoundsLC["SoundSource"] == 1 then
-					tinsert(ListData, 4, "|cffffd800" .. L["Sound Files"])
-				else
-					tinsert(ListData, 4, "|cffffd800" .. L["Sound Kits"])
-				end
+				tinsert(ListData, 4, "|cffffd800" .. L["Sound Files"])
 			end
 			-- Update buttons
 			FauxScrollFrame_Update(scrollFrame, #ListData, numButtons, 16)
@@ -536,9 +403,8 @@
 		searchLabel:ClearAllPoints()
 		searchLabel:SetPoint("BOTTOMLEFT", 16, 17)
 
-		local sBox = LeaSoundsLC:CreateEditBox("SearchBox", LeaSoundsLC["PageF"], 266, 10, "TOPLEFT", 101, -272)
+		local sBox = LeaSoundsLC:CreateEditBox("SearchBox", LeaSoundsLC["PageF"], 432, 100, "TOPLEFT", 101, -272)
 		LeaSoundsCB["sBox"] = sBox
-		sBox:SetMaxLetters(100)
 		sBox:ClearAllPoints()
 		sBox:SetPoint("LEFT", searchLabel, "RIGHT", 16, 0)
 
@@ -567,11 +433,7 @@
 				ListData[2] = ""
 			end
 			ListData[3] = "|cffffffff"
-			if LeaSoundsLC["SoundSource"] == 1 then
-				ListData[4] = "|cffffd800" .. L["Sound Files"]
-			else
-				ListData[4] = "|cffffd800" .. L["Sound Kits"]
-			end
+			ListData[4] = "|cffffd800" .. L["Sound Files"]
 
 			-- Traverse music listing and populate ListData
 			if searchText ~= "" then
@@ -648,27 +510,14 @@
 		local function SetListingFunc()
 			wipe(Leatrix_Sounds["Listing"])
 			-- Populate sound table
-			if LeaSoundsLC["SoundSource"] == 1 then
-				if LeaSoundsLC["SoundMusic"] == "On" then
-					for i = 1, #Leatrix_Sounds["MP3"] do
-						tinsert(Leatrix_Sounds["Listing"], Leatrix_Sounds["MP3"][i])
-					end
+			if LeaSoundsLC["SoundMusic"] == "On" then
+				for i = 1, #Leatrix_Sounds["MP3"] do
+					tinsert(Leatrix_Sounds["Listing"], Leatrix_Sounds["MP3"][i])
 				end
-				if LeaSoundsLC["SoundSFX"] == "On" then
-					for i = 1, #Leatrix_Sounds["OGG"] do
-						tinsert(Leatrix_Sounds["Listing"], Leatrix_Sounds["OGG"][i])
-					end
-				end
-			elseif LeaSoundsLC["SoundSource"] == 2 then
-				if LeaSoundsLC["SoundMusic"] == "On" then
-					for i = 1, #Leatrix_Sounds["Music"] do
-						tinsert(Leatrix_Sounds["Listing"], Leatrix_Sounds["Music"][i])
-					end
-				end
-				if LeaSoundsLC["SoundSFX"] == "On" then
-					for i = 1, #Leatrix_Sounds["SFX"] do
-						tinsert(Leatrix_Sounds["Listing"], Leatrix_Sounds["SFX"][i])
-					end
+			end
+			if LeaSoundsLC["SoundSFX"] == "On" then
+				for i = 1, #Leatrix_Sounds["OGG"] do
+					tinsert(Leatrix_Sounds["Listing"], Leatrix_Sounds["OGG"][i])
 				end
 			end
 			-- Sort the table
@@ -694,20 +543,6 @@
 
 		LeaSoundsCB["SoundMusic"]:HookScript("OnClick", function() playScroll = nil; C_Timer.After(0.001, SetListingFunc) end)
 		LeaSoundsCB["SoundSFX"]:HookScript("OnClick", function() playScroll = nil; C_Timer.After(0.001, SetListingFunc) end)
-		LeaSoundsCB["ListFrameSoundSource"]:HookScript("OnHide", function() playScroll = nil; C_Timer.After(0.001, SetListingFunc) end)
-		LeaSoundsCB["ListButtonSoundSource"]:HookScript("OnMouseDown", function(self, btn)
-			if btn == "RightButton" then
-				if LeaSoundsLC["SoundSource"] == 1 then
-					LeaSoundsLC["SoundSource"] = 2
-					LeaSoundsLC["SoundSourceValue"]:SetText(L["Sound Kits"])
-				else
-					LeaSoundsLC["SoundSource"] = 1
-					LeaSoundsLC["SoundSourceValue"]:SetText(L["Sound Files"])
-				end
-				LeaSoundsCB["ListFrameSoundSource"]:Show()
-				LeaSoundsCB["ListFrameSoundSource"]:Hide()
-			end
-		end)
 
 		-- Create list items
 		scrollFrame.buttons = {}
@@ -764,16 +599,6 @@
 							DEFAULT_CHAT_FRAME:AddMessage(item)
 							return
 						end
-						-- Print WoW.tools link in chat if control is held
-						if IsControlKeyDown() and not IsShiftKeyDown() then
-							local file, soundID = item:match("([^,]+)%#([^,]+)")
-							if strfind(file, ".mp3") or strfind(file, ".ogg") then
-								DEFAULT_CHAT_FRAME:AddMessage("https://wow.tools/files/#search=^" .. soundID .. "$")
-							else
-								DEFAULT_CHAT_FRAME:AddMessage("https://wow.tools/files/#search=skit:" .. soundID)
-							end
-							return
-						end
 						-- Enable sound if required
 						if GetCVar("Sound_EnableAllSound") == "0" then SetCVar("Sound_EnableAllSound", "1") end
 						-- Disable music if it's currently enabled
@@ -789,13 +614,6 @@
 						if strfind(file, ".mp3") or strfind(file, ".ogg") then
 							-- Play sound file
 							void, musicHandle = PlaySoundFile(file, "Master")
-						else
-							-- Enable dialog sounds if required
-							if GetCVar("Sound_EnableDialog") == "0" then SetCVar("Sound_EnableDialog", "1") end
-							-- Set dialog sound to maximum if required
-							if GetCVar("Sound_DialogVolume") ~= "1" then SetCVar("Sound_DialogVolume", "1") end
-							-- Play sound kit
-							void, musicHandle = PlaySound(soundID, "Master", false, true)
 						end
 						-- Remember scroll frame position
 						playScroll = LeaSoundsLC.scrollFrame:GetVerticalScroll()
@@ -842,28 +660,6 @@
 							local eBox = ChatEdit_ChooseBoxForSend()
 							ChatEdit_ActivateChat(eBox)
 							eBox:SetText(item)
-							eBox:HighlightText()
-						end
-						return
-					end
-					-- Print WoW.tools link in editbox
-					if IsControlKeyDown() and not IsShiftKeyDown() then
-						-- Remove focus from search box
-						sBox:ClearFocus()
-						-- Get clicked track text
-						local item = self:GetText()
-						-- Do nothing if its a blank line or informational heading
-						if not item or strfind(item, "|c") then return end
-						if strfind(item, "#") then
-							-- Print track name in chat editbox and highlight it
-							local file, soundID = item:match("([^,]+)%#([^,]+)")
-							local eBox = ChatEdit_ChooseBoxForSend()
-							ChatEdit_ActivateChat(eBox)
-							if strfind(file, ".mp3") or strfind(file, ".ogg") then
-								eBox:SetText("https://wow.tools/files/#search=^" .. soundID .. "$")
-							else
-								eBox:SetText("https://wow.tools/files/#search=skit:" .. soundID)
-							end
 							eBox:HighlightText()
 						end
 						return
@@ -926,7 +722,7 @@
 			if not playScroll then return end
 			scrollFrame:SetVerticalScroll(playScroll)
 
-			-- Get currently selected sound kit
+			-- Get currently selected track
 			local playingTrack = 0
 			for i = 1, numButtons do
 				if scrollFrame.buttons[i].s:IsShown() then
@@ -934,11 +730,11 @@
 				end
 			end
 
-			-- Sound kit playback keys
+			-- Playback keys
 			if playingTrack and playingTrack > 0 then
 
 				if key == "E" then
-					-- Replay currently selected sound kit
+					-- Replay currently selected track
 					scrollFrame.buttons[playingTrack]:Click("LeftButton")
 				end
 
@@ -952,12 +748,12 @@
 						playingTrack = playingTrack - jumpList
 					end
 
-					-- Play next sound kit
+					-- Play next track
 					scrollFrame.buttons[playingTrack + 1]:Click("LeftButton")
 				end
 
 				if key == "W" then
-					-- Play previous sound kit
+					-- Play previous track
 					if playingTrack == 1 then
 						LeaSoundsScrollFrameScrollBar:SetValue(LeaSoundsScrollFrameScrollBar:GetValue() - jumpList * 16) -- 16 is row height
 						playingTrack = playingTrack + jumpList
@@ -998,7 +794,6 @@
 			LeaSoundsLC:LoadVarNum("MainPanelY", 0, -5000, 5000)
 			LeaSoundsLC:LoadVarChk("SoundMusic", "On")
 			LeaSoundsLC:LoadVarChk("SoundSFX", "On")
-			LeaSoundsLC:LoadVarNum("SoundSource", 1, 1, 2)
 
 		elseif event == "PLAYER_LOGIN" then
 			-- Run main function
@@ -1012,7 +807,6 @@
 			LeaSoundsDB["MainPanelY"] = LeaSoundsLC["MainPanelY"]
 			LeaSoundsDB["SoundMusic"] = LeaSoundsLC["SoundMusic"]
 			LeaSoundsDB["SoundSFX"] = LeaSoundsLC["SoundSFX"]
-			LeaSoundsDB["SoundSource"] = LeaSoundsLC["SoundSource"]
 
 		end
 

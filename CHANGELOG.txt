@@ -1,5 +1,6 @@
-1.14.56 - 17th August 2022
-- Maintenance update.
+1.14.57.alpha.1 - 21st August 2022
+- Sound kits are no longer available in the addon.
+- WoW.tools links are no longer supported.  The WoW.tools website is deprecated.
 
 1.14.49 - 3rd August 2022
 - Sounds updated to game version 1.14.3.44834.
