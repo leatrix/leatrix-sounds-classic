@@ -1,3 +1,6 @@
+1.14.58.alpha.1 - 4th September 2022
+- Chugga-chugga-chugga-chugga-choo-choo!
+
 1.14.57 - 24th August 2022
 - Sound kits are no longer available in the addon.
 - WoW.tools links are no longer supported.  The WoW.tools website is deprecated.
