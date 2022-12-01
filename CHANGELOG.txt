@@ -1,3 +1,6 @@
+1.14.67 - 1st December 2022
+- Sounds updated to game version 1.14.3.46575 (Nov 8 2022) (11403).
+
 1.14.66 - 26th October 2022
 - Sounds updated to game version 1.14.3.45437 (Sep 1 2022) (11403).
 
