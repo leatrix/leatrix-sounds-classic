@@ -7424,3 +7424,9 @@
 		"sound/spells/yarrrrimpact.ogg#568382",
 
 	}
+
+	Leatrix_Sounds["EXT"] = {
+
+		"unknown.ogg#4397392",
+
+	}
