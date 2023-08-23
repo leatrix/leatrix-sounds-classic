@@ -7428,5 +7428,8 @@
 	Leatrix_Sounds["EXT"] = {
 
 		"unknown.ogg#4397392",
+		"unknown.ogg#5347804",
+		"unknown.ogg#5347806",
+		"unknown.ogg#5347808",
 
 	}
