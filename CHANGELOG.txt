@@ -1,3 +1,6 @@
+1.14.135.alpha.1 - 25th October 2023
+- Fixed an issue which caused a Lua error when playing a track during combat.
+
 1.14.133 - 25th October 2023
 - Sounds updated to game version 1.14.4.51829 (Oct 18 2023) (11404).
 
