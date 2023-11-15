@@ -1,3 +1,7 @@
+1.15.00 - 15th November 2023
+- Updated for patch 1.14.5.
+- Sounds updated to game version 1.15.0.52186 (Nov 14 2023) (11500).
+
 1.14.135 - 8th November 2023
 - Fixed an issue which caused a Lua error when playing a track during combat.
 
