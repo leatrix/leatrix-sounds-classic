@@ -695,15 +695,15 @@
 		SetListingFunc()
 
 		-- Keyboard input
-		hooksecurefunc("ChatEdit_ActivateChat", function()
+		-- hooksecurefunc("ChatEdit_ActivateChat", function()
 			-- Disable hotkeys when chat editbox is activated
 			-- PageF:EnableKeyboard(false)
-		end)
+		-- end)
 
-		hooksecurefunc("ChatEdit_DeactivateChat", function()
+		-- hooksecurefunc("ChatEdit_DeactivateChat", function()
 			-- Enable hotkeys when chat editbox is deactivated
 			-- PageF:EnableKeyboard(true)
-		end)
+		-- end)
 
 		local jumpList = 15 -- Number of tracks for next and previous page
 		PageF:SetScript("OnKeyUp", function(self, key)
