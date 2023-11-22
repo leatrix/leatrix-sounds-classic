@@ -1,5 +1,6 @@
-1.15.01.alpha.1 - 15th November 2023
+1.15.03 - 22nd November 2023
 - Fixed an issue which caused keypresses to be intercepted when a track wasn't playing.
+- Sounds updated to game version 1.15.0.52212 (Nov 15 2023) (11500).
 
 1.15.00 - 15th November 2023
 - Updated for patch 1.14.5.
