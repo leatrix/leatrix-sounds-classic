@@ -1,3 +1,9 @@
+1.15.12.alpha.1 - 13th January 2024
+- Repackaged following CurseForge backend issues.
+
+1.15.08 - 20th December 2023
+- Sounds updated to game version 1.15.0.52610 (Dec 15 2023) (11500).
+
 1.15.03 - 22nd November 2023
 - Fixed an issue which caused keypresses to be intercepted when a track wasn't playing.
 - Sounds updated to game version 1.15.0.52212 (Nov 15 2023) (11500).
