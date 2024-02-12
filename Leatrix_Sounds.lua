@@ -729,7 +729,6 @@
 
 			-- Set scroll frame to last played position
 			if not playScroll then return end
-			scrollFrame:SetVerticalScroll(playScroll)
 
 			-- Get currently selected track
 			local playingTrack = 0
@@ -738,6 +737,7 @@
 					playingTrack = i
 				end
 			end
+			if playingTrack == 0 then scrollFrame:SetVerticalScroll(playScroll) end -- Only jump to track if not visible
 
 			-- Playback keys
 			if playingTrack and playingTrack > 0 then
