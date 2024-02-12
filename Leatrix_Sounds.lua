@@ -373,7 +373,7 @@
 		scrollFrame = CreateFrame("ScrollFrame", "LeaSoundsScrollFrame", LeaSoundsLC["PageF"], "ScrollFrameTemplate")
 		scrollFrame:SetPoint("TOPLEFT", 0, -32)
 		scrollFrame:SetPoint("BOTTOMRIGHT", -30, 52)
-		scrollFrame:SetPanExtent(1)
+		scrollFrame:SetPanExtent(1.01)
 		scrollFrame:SetScript("OnVerticalScroll", UpdateList)
 
 		-- Create the scroll child
