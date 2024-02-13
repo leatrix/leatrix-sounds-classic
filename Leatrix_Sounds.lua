@@ -752,8 +752,8 @@
 					if scrollFrame.buttons[playingTrack]:GetText() == ListData[#ListData] then return end
 					-- Play next track
 					if playingTrack == 15 then
-						LeaSoundsLC.scrollFrame.ScrollBar:ScrollStepInDirection(15)
-						playingTrack = playingTrack - jumpList
+						LeaSoundsLC.scrollFrame.ScrollBar:ScrollStepInDirection(1)
+						playingTrack = playingTrack - 1
 						scrollFrame.buttons[playingTrack + 1]:Click("LeftButton")
 					else
 						scrollFrame.buttons[playingTrack + 1]:Click("LeftButton")
@@ -763,8 +763,8 @@
 				if key == "W" then
 					-- Play previous track
 					if playingTrack == 1 then
-						LeaSoundsLC.scrollFrame.ScrollBar:ScrollStepInDirection(-15)
-						playingTrack = playingTrack + jumpList
+						LeaSoundsLC.scrollFrame.ScrollBar:ScrollStepInDirection(-1)
+						playingTrack = playingTrack + 1
 						scrollFrame.buttons[playingTrack - 1]:Click("LeftButton")
 					else
 						scrollFrame.buttons[playingTrack - 1]:Click("LeftButton")
