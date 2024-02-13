@@ -324,7 +324,7 @@
 				tinsert(ListData, 4, "|cffffd800" .. L["Sound Files"])
 			end
 			-- Update buttons
-			local offset = max(0, floor(scrollFrame:GetVerticalScroll()))
+			local offset = max(0, floor(scrollFrame:GetVerticalScroll() + 0.5))
 			for i, button in ipairs(scrollFrame.buttons) do
 				local index = offset + i
 				if index <= #ListData then
