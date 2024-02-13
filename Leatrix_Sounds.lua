@@ -624,7 +624,7 @@
 							void, musicHandle = PlaySoundFile(file, "Master")
 						end
 						-- Remember scroll frame position
-						playScroll = LeaSoundsLC.scrollFrame:GetVerticalScroll()
+						playScroll = LeaSoundsLC.scrollFrame.ScrollBar:GetScrollPercentage()
 						-- Show static highlight bar
 						for index = 1, numButtons do
 							local button = scrollFrame.buttons[index]
@@ -737,7 +737,7 @@
 					playingTrack = i
 				end
 			end
-			if playingTrack == 0 then scrollFrame:SetVerticalScroll(playScroll) end -- Only jump to track if not visible
+			if playingTrack == 0 then scrollFrame.ScrollBar:SetScrollPercentage(playScroll) end -- Only jump to track if not visible
 
 			-- Playback keys
 			if playingTrack and playingTrack > 0 then
