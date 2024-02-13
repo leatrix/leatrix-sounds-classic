@@ -607,6 +607,14 @@
 							DEFAULT_CHAT_FRAME:AddMessage(item)
 							return
 						end
+						-- Print ID in chat if control is held
+						if IsControlKeyDown() and not IsShiftKeyDown() then
+							local file, soundID = item:match("([^,]+)%#([^,]+)")
+							if soundID then
+								DEFAULT_CHAT_FRAME:AddMessage(soundID)
+								return
+							end
+						end
 						-- Enable sound if required
 						if GetCVar("Sound_EnableAllSound") == "0" then SetCVar("Sound_EnableAllSound", "1") end
 						-- Disable music if it's currently enabled
