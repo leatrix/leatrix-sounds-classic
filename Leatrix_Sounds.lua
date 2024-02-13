@@ -737,7 +737,16 @@
 					playingTrack = i
 				end
 			end
-			if playingTrack == 0 then scrollFrame.ScrollBar:SetScrollPercentage(playScroll) end -- Only jump to track if not visible
+
+			-- If playing track exists but is not visible, jump to playing track
+			if playingTrack == 0 then
+				scrollFrame.ScrollBar:SetScrollPercentage(playScroll)
+				for i = 1, numButtons do
+					if scrollFrame.buttons[i].s:IsShown() then
+						playingTrack = i
+					end
+				end
+			end
 
 			-- Playback keys
 			if playingTrack and playingTrack > 0 then
