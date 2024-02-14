@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.15.18 (14th February 2024)
+	-- Leatrix Sounds 1.15.19.alpha.1 (14th February 2024)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,7 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB = {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.15.18"
+	LeaSoundsLC["AddonVer"] = "1.15.19.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Sounds = ...
@@ -365,8 +365,8 @@
 					button:SetText("---")
 					button:Hide()
 				end
-				scrollFrame.child:SetSize(200, #ListData + (14*15) - 1) --++ LeaSoundsLC.NewPatch
 			end
+			scrollFrame.child:SetSize(200, #ListData + (14*15) - 1) --++ LeaSoundsLC.NewPatch
 		end
 
 		-- Create scroll frame
