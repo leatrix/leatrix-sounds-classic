@@ -362,7 +362,6 @@
 					button:GetFontString():SetWidth(frameWidth - 60)
 					button:GetFontString():SetWordWrap(false)
 				else
-					button:SetText("---")
 					button:Hide()
 				end
 			end
