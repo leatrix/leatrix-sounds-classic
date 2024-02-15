@@ -382,6 +382,22 @@
 		-- Give scroll frame file level scope
 		LeaSoundsLC.scrollFrame = scrollFrame
 
+		-- Design scroll bar: Move scroll bar
+		scrollFrame.ScrollBar:ClearAllPoints()
+		scrollFrame.ScrollBar:SetPoint("TOPLEFT", scrollFrame, "TOPRIGHT", 12, 0)
+		scrollFrame.ScrollBar:SetPoint("BOTTOMRIGHT", scrollFrame, 12, 0)
+
+		-- Design scroll bar: Move back and forward buttons
+		scrollFrame.ScrollBar.Back:ClearAllPoints()
+		scrollFrame.ScrollBar.Back:SetPoint("TOPLEFT", scrollFrame.ScrollBar, "TOPLEFT", -6, -4)
+		scrollFrame.ScrollBar.Forward:ClearAllPoints()
+		scrollFrame.ScrollBar.Forward:SetPoint("BOTTOMLEFT", scrollFrame.ScrollBar, "BOTTOMLEFT", -6, 4)
+
+		-- Design scroll bar: Hide scrollbar frame
+		scrollFrame.ScrollBar.Background.Begin:Hide()
+		scrollFrame.ScrollBar.Background.Middle:Hide()
+		scrollFrame.ScrollBar.Background.End:Hide()
+
 		-- Add stop button
 		local stopBtn = LeaSoundsLC:CreateButton("StopPlaybackButton", LeaSoundsLC["PageF"], "Stop", "BOTTOMRIGHT", -16, 12, 25)
 		stopBtn:Hide(); stopBtn:Show()
