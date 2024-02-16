@@ -781,6 +781,9 @@
 					if scrollFrame.buttons[playingTrack]:GetText() == ListData[#ListData] then return end
 					-- Play next track
 					if playingTrack == 15 then
+						-- To jump entire page (15 rows), use this and set StepInDirection and playingTrack to diff
+						-- diff = #ListData - (15 + max(0, floor(scrollFrame:GetVerticalScroll() + 0.5)))
+						-- if diff > 15 then diff = 15 end
 						LeaSoundsLC.scrollFrame.ScrollBar:ScrollStepInDirection(1)
 						playingTrack = playingTrack - 1
 						scrollFrame.buttons[playingTrack + 1]:Click("LeftButton")
@@ -792,6 +795,9 @@
 				if key == "W" then
 					-- Play previous track
 					if playingTrack == 1 then
+						-- To jump entire page (15 rows), use this and set StepInDirection and playingTrack to diff
+						-- diff = (max(0, floor(scrollFrame:GetVerticalScroll() + 0.5)))
+						-- if diff > 15 then diff = 15 end
 						LeaSoundsLC.scrollFrame.ScrollBar:ScrollStepInDirection(-1)
 						playingTrack = playingTrack + 1
 						scrollFrame.buttons[playingTrack - 1]:Click("LeftButton")
