@@ -701,9 +701,6 @@
 			end)
 		end
 
-		-- Delete the global scroll frame pointer
-		_G.LeaSoundsScrollFrame = nil
-
 		-- Manage events
 		LeaSoundsLC["PageF"]:RegisterEvent("PLAYER_LOGOUT")
 		LeaSoundsLC["PageF"]:RegisterEvent("UI_SCALE_CHANGED")
