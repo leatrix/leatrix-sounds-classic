@@ -1,4 +1,4 @@
-﻿1.15.29.alpha.1 - 24th April 2024
+﻿1.15.29 - 1st May 2024
 - Added 'Unknown' checkbox (mirroring retail).
 - You can now hold CTRL and click to print (left-click) or insert (right-click) the selected track ID in chat.
 - Sounds will now play by their ID instead of their filename.
