@@ -1,4 +1,7 @@
-﻿1.15.32 - 22nd May 2024
+﻿1.15.34 - 5th June 2024
+- Updated for game version 1.15.2.55002 (Jun 3 2024) (11502).
+
+1.15.32 - 22nd May 2024
 - Updated for game version 1.15.2.54649 (May 9 2024) (11502).
 
 1.15.30 - 8th May 2024
