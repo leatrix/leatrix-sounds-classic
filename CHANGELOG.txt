@@ -1,8 +1,11 @@
-﻿1.15.34 - 5th June 2024
-- Updated for game version 1.15.2.55002 (Jun 3 2024) (11502).
+﻿1.15.37 - 26th June 2024
+- Sounds updated to game version 1.15.2.55140 (Jun 12 2024) (11502).
+
+1.15.34 - 5th June 2024
+- Sounds updated to game version 1.15.2.55002 (Jun 3 2024) (11502).
 
 1.15.32 - 22nd May 2024
-- Updated for game version 1.15.2.54649 (May 9 2024) (11502).
+- Sounds updated to game version 1.15.2.54649 (May 9 2024) (11502).
 
 1.15.30 - 8th May 2024
 - Added ability to toggle the main panel by clicking the slash command logo in the interface options panel.
@@ -13,7 +16,7 @@
 - Sounds will now play by their ID instead of their filename.
 
 1.15.28 - 24th April 2024
-- Updated for game version 1.15.2.54332 (Apr 17 2024) (11502).
+- Sounds updated to game version 1.15.2.54332 (Apr 17 2024) (11502).
 
 1.15.25 - 3rd April 2024
 - Updated for game version 1.15.2.
