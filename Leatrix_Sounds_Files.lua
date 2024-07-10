@@ -233,6 +233,12 @@
 		"sound/ambience/water/river_lakestilla.ogg#538973",
 		"sound/ambience/water/riverfasta.ogg#538980",
 		"sound/ambience/water/riverslowa.ogg#538974",
+		"sound/ambience/weather/fx_weather_blazing_sky_distant_volcano_01.ogg#2066248",
+		"sound/ambience/weather/fx_weather_blazing_sky_distant_volcano_02.ogg#2066249",
+		"sound/ambience/weather/fx_weather_blazing_sky_distant_volcano_03.ogg#2066250",
+		"sound/ambience/weather/fx_weather_blazing_sky_distant_volcano_04.ogg#2066251",
+		"sound/ambience/weather/fx_weather_blazing_sky_distant_volcano_05.ogg#2066252",
+		"sound/ambience/weather/fx_weather_blazing_sky_distant_volcano_06.ogg#2066253",
 		"sound/ambience/weather/rainheavyloop.ogg#538982",
 		"sound/ambience/weather/rainlightloop.ogg#538983",
 		"sound/ambience/weather/rainmediumloop.ogg#538981",
@@ -293,6 +299,7 @@
 		"sound/ambience/wmoambience/wailingcaverns.ogg#537442",
 		"sound/ambience/zoneambience/ahnqirajcthunstomach.ogg#539135",
 		"sound/ambience/zoneambience/ahnqirajexteriora.ogg#539099",
+		"sound/ambience/zoneambience/amb_firelands.ogg#539050",
 		"sound/ambience/zoneambience/beachday.ogg#539048",
 		"sound/ambience/zoneambience/beachnight.ogg#539125",
 		"sound/ambience/zoneambience/canyondesertday.ogg#539024",
@@ -4681,6 +4688,7 @@
 		"sound/creature/murloc/mmurlocwoundb.ogg#555996",
 		"sound/creature/murloc/mmurlocwoundc.ogg#555994",
 		"sound/creature/murloc/mmurlocwoundcriticala.ogg#556007",
+		"sound/creature/naaru/naruuloopgood.ogg#601649",
 		"sound/creature/naga/nagaaggro.ogg#556119",
 		"sound/creature/naga/nagaattacka.ogg#556109",
 		"sound/creature/naga/nagaattackb.ogg#556107",
@@ -7581,9 +7589,19 @@
 
 	Leatrix_Sounds["EXT"] = {
 
+		"unknown.ogg#953781",
+		"unknown.ogg#953783",
+		"unknown.ogg#953785",
+		"unknown.ogg#953787",
+		"unknown.ogg#953789",
+		"unknown.ogg#953791",
+		"unknown.ogg#953793",
 		"unknown.ogg#4397392",
 		"unknown.ogg#5347804",
 		"unknown.ogg#5347806",
 		"unknown.ogg#5347808",
+		"unknown.ogg#6022248",
+		"unknown.ogg#6022250",
+		"unknown.ogg#6022252",
 
 	}
