@@ -1,4 +1,7 @@
-﻿1.15.39 - 10th July 2024
+﻿1.15.42 - 31st July 2024
+- Sounds updated to game version 1.15.3.55646 (Jul 12 2024) (11503).
+
+1.15.39 - 10th July 2024
 - Updated for game version 1.15.3.
 - Sounds updated to game version 1.15.3.55563 (Jul 9 2024) (11503).
 
