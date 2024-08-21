@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.15.44 (14th August 2024)
+	-- Leatrix Sounds 1.15.45 (21st August 2024)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,7 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB = {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.15.44"
+	LeaSoundsLC["AddonVer"] = "1.15.45"
 
 	-- Get locale table
 	local void, Leatrix_Sounds = ...
