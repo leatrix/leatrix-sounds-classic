@@ -961,18 +961,20 @@
 		slashButton:SetPoint("BOTTOM", subTitle, "TOP", 0, 40)
 		slashButton:SetScript("OnClick", function() SlashCmdList["Leatrix_Sounds"]("") end)
 
-		local slashTitle = LeaSoundsLC:MakeTx(slashButton, "/lts", 0, 0)
+		local slashTitle = LeaSoundsLC:MakeTx(interPanel, "/lts", 0, 0)
 		slashTitle:SetFont(slashTitle:GetFont(), 72)
 		slashTitle:ClearAllPoints()
-		slashTitle:SetAllPoints()
-
-		slashButton:SetSize(slashTitle:GetSize())
-		slashButton:SetScript("OnEnter", function()
+		slashTitle:SetPoint("BOTTOM", subTitle, "TOP", 0, 40)
+		slashTitle:SetScript("OnMouseUp", function(self, button)
+			if button == "LeftButton" then
+				SlashCmdList["Leatrix_Sounds"]("")
+			end
+		end)
+		slashTitle:SetScript("OnEnter", function()
 			slashTitle.r,  slashTitle.g, slashTitle.b = slashTitle:GetTextColor()
 			slashTitle:SetTextColor(1, 1, 0)
 		end)
-
-		slashButton:SetScript("OnLeave", function()
+		slashTitle:SetScript("OnLeave", function()
 			slashTitle:SetTextColor(slashTitle.r, slashTitle.g, slashTitle.b)
 		end)
 
