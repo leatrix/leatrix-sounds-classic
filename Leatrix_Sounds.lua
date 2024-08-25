@@ -957,10 +957,6 @@
 		subTitle:ClearAllPoints()
 		subTitle:SetPoint("BOTTOM", 0, 72)
 
-		local slashButton = CreateFrame("Button", nil, interPanel)
-		slashButton:SetPoint("BOTTOM", subTitle, "TOP", 0, 40)
-		slashButton:SetScript("OnClick", function() SlashCmdList["Leatrix_Sounds"]("") end)
-
 		local slashTitle = LeaSoundsLC:MakeTx(interPanel, "/lts", 0, 0)
 		slashTitle:SetFont(slashTitle:GetFont(), 72)
 		slashTitle:ClearAllPoints()
