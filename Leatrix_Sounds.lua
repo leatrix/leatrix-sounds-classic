@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.15.46 (28th August 2024)
+	-- Leatrix Sounds 1.15.47.alpha.2 (1st September 2024)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,7 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB = {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.15.46"
+	LeaSoundsLC["AddonVer"] = "1.15.47.alpha.2"
 
 	-- Get locale table
 	local void, Leatrix_Sounds = ...
@@ -25,6 +25,9 @@
 				print(L["LEATRIX SOUNDS: WRONG VERSION INSTALLED!"])
 			end)
 			return
+		end
+		if gametocversion and gametocversion == 11504 then
+			LeaSoundsLC.NewPatch = true
 		end
 	end
 
@@ -909,7 +912,11 @@
 			end
 		else
 			-- Prevent panel from showing if a game options panel is showing
-			if InterfaceOptionsFrame:IsShown() or ChatConfigFrame:IsShown() then return end
+			if LeaSoundsLC.NewPatch then
+				if ChatConfigFrame:IsShown() then return end
+			else
+				if InterfaceOptionsFrame:IsShown() or ChatConfigFrame:IsShown() then return end
+			end
 			-- Prevent panel from showing if Blizzard Store is showing
 			if StoreFrame and StoreFrame:GetAttribute("isshown") then return end
 			-- Toggle the main panel
@@ -937,7 +944,53 @@
 	-- Create panel in game options panel
 	----------------------------------------------------------------------
 
-	do
+	if LeaSoundsLC.NewPatch then
+
+		local interPanel = CreateFrame("FRAME")
+		interPanel.name = "Leatrix Sounds"
+
+		local maintitle = LeaSoundsLC:MakeTx(interPanel, "Leatrix Sounds", 0, 0)
+		maintitle:SetFont(maintitle:GetFont(), 72)
+		maintitle:ClearAllPoints()
+		maintitle:SetPoint("TOP", 0, -72)
+
+		local expTitle = LeaSoundsLC:MakeTx(interPanel, "World of Warcraft Classic", 0, 0)
+		expTitle:SetFont(expTitle:GetFont(), 32)
+		expTitle:ClearAllPoints()
+		expTitle:SetPoint("TOP", 0, -152)
+
+		local subTitle = LeaSoundsLC:MakeTx(interPanel, "www.leatrix.com", 0, 0)
+		subTitle:SetFont(subTitle:GetFont(), 20)
+		subTitle:ClearAllPoints()
+		subTitle:SetPoint("BOTTOM", 0, 72)
+
+		local slashTitle = LeaSoundsLC:MakeTx(interPanel, "/lts", 0, 0)
+		slashTitle:SetFont(slashTitle:GetFont(), 72)
+		slashTitle:ClearAllPoints()
+		slashTitle:SetPoint("BOTTOM", subTitle, "TOP", 0, 40)
+		slashTitle:SetScript("OnMouseUp", function(self, button)
+			if button == "LeftButton" then
+				SlashCmdList["Leatrix_Sounds"]("")
+			end
+		end)
+		slashTitle:SetScript("OnEnter", function()
+			slashTitle.r,  slashTitle.g, slashTitle.b = slashTitle:GetTextColor()
+			slashTitle:SetTextColor(1, 1, 0)
+		end)
+		slashTitle:SetScript("OnLeave", function()
+			slashTitle:SetTextColor(slashTitle.r, slashTitle.g, slashTitle.b)
+		end)
+
+		local pTex = interPanel:CreateTexture(nil, "BACKGROUND")
+		pTex:SetAllPoints()
+		pTex:SetTexture("Interface\\GLUES\\Models\\UI_MainMenu\\swordgradient2")
+		pTex:SetAlpha(0.2)
+		pTex:SetTexCoord(0, 1, 1, 0)
+
+		local category = Settings.RegisterCanvasLayoutCategory(interPanel, "Leatrix Sounds")
+		Settings.RegisterAddOnCategory(category)
+
+	else
 
 		local interPanel = CreateFrame("FRAME")
 		interPanel.name = "Leatrix Sounds"
