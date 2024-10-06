@@ -1,6 +1,6 @@
 ﻿
 	----------------------------------------------------------------------
-	-- Leatrix Sounds 1.15.53 (2nd October 2024)
+	-- Leatrix Sounds 1.15.54.alpha.1 (2nd October 2024)
 	----------------------------------------------------------------------
 
 	--  Create global table
@@ -10,7 +10,7 @@
 	local LeaSoundsLC, LeaSoundsCB = {}, {}
 
 	-- Version
-	LeaSoundsLC["AddonVer"] = "1.15.53"
+	LeaSoundsLC["AddonVer"] = "1.15.54.alpha.1"
 
 	-- Get locale table
 	local void, Leatrix_Sounds = ...
@@ -393,6 +393,9 @@
 		stopBtn:Hide(); stopBtn:Show()
 		LeaSoundsLC:LockItem(stopBtn, true)
 		stopBtn:SetScript("OnClick", function()
+			-- Close chat editbox
+			local eBox = ChatEdit_ChooseBoxForSend()
+			eBox:ClearFocus()
 			-- Stop currently playing track
 			if musicHandle then
 				StopSound(musicHandle)
@@ -626,6 +629,7 @@
 					if strfind(item, "#") then
 						-- Print track name in chat if shift is held
 						if IsShiftKeyDown() and not IsControlKeyDown() then
+							PageF:EnableKeyboard(false)
 							DEFAULT_CHAT_FRAME:AddMessage(item)
 							return
 						end
@@ -633,10 +637,14 @@
 						if IsControlKeyDown() and not IsShiftKeyDown() then
 							local file, soundID = item:match("([^,]+)%#([^,]+)")
 							if soundID then
+								PageF:EnableKeyboard(false)
 								DEFAULT_CHAT_FRAME:AddMessage(soundID)
 								return
 							end
 						end
+						-- Close editbox
+						local eBox = ChatEdit_ChooseBoxForSend()
+						eBox:ClearFocus()
 						-- Enable sound if required
 						if GetCVar("Sound_EnableAllSound") == "0" then SetCVar("Sound_EnableAllSound", "1") end
 						-- Disable music if it's currently enabled
@@ -675,6 +683,7 @@
 						-- Do nothing if its a blank line or informational heading
 						if not item or strfind(item, "|c") then return end
 						if strfind(item, "#") then
+							PageF:EnableKeyboard(false)
 							local file, soundID = item:match("([^,]+)%#([^,]+)")
 							local eBox = ChatEdit_ChooseBoxForSend()
 							ChatEdit_ActivateChat(eBox)
@@ -698,6 +707,7 @@
 						if strfind(item, "#") then
 							if IsShiftKeyDown() and not IsControlKeyDown() then
 								-- Print track name in chat editbox and highlight it
+								PageF:EnableKeyboard(false)
 								local eBox = ChatEdit_ChooseBoxForSend()
 								ChatEdit_ActivateChat(eBox)
 								eBox:SetText(item)
@@ -707,6 +717,7 @@
 								-- Print track name in chat editbox and highlight it
 								local file, soundID = item:match("([^,]+)%#([^,]+)")
 								if soundID then
+									PageF:EnableKeyboard(false)
 									local eBox = ChatEdit_ChooseBoxForSend()
 									ChatEdit_ActivateChat(eBox)
 									eBox:SetText(soundID)
