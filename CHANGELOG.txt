@@ -1,4 +1,4 @@
-﻿1.15.54.alpha.1 - 25th September 2024
+﻿1.15.54 - 9th October 2024
 - Holding shift or control to print or insert track details into chat will now temporarily disable keyboard input into the Leatrix Sounds panel to make copy and paste easier.  Clicking a track will enable keyboard input again.
 
 1.15.50 - 25th September 2024
