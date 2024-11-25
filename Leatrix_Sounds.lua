@@ -72,7 +72,7 @@ C_Timer.After(2, function()
 	frame:SetPoint("CENTER", UIParent, "CENTER", 0, -768)
 
 	local startY, endX, endY, duration, elapsedTime = -768, 0, 0, 2.5, 0
-	PlaySoundFile("Interface\\AddOns\\Leatrix_Sounds\\sound2.mp3", "MASTER")
+	PlaySoundFile("Interface\\AddOns\\Leatrix_Sounds\\sound.mp3", "MASTER")
 
 	frame:SetScript("OnUpdate", function(self, elapsed)
 		elapsedTime = elapsedTime + elapsed
